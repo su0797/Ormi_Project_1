@@ -89,49 +89,33 @@
         <ul></ul>
     </div>
     <script>
-        let $input = document.querySelector('input')
-        let $button = document.querySelector('button')
-        
-        let data = [{
-            "role": "system",
-            "content": "assistant는 영화 추천 전문가이다."
-        }]
+        const $form = document.querySelector("form");
+        const $input = document.querySelector("input");
+        const $chatList = document.querySelector("card-container");
 
+        // openAI API
         let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
+
+        // 사용자의 질문
+        let question;
+
+        // 질문과 답변 저장
+        let data = [
+        {
+            role: "system",
+            content: "assistant는 친절한 답변가이다.",
+        }];
+
+        // 화면에 뿌려줄 데이터, 질문들
+        let questionData = [];
+
+        // input에 입력된 질문 받아오는 함수
+        $input.addEventListener("input", (e) => {
+        question = e.target.value;
+        console.log('input');
+        });
+
         
-        $button.addEventListener('click', e =>{
-            e.preventDefault()
-            userInputData = $input.value
-            $input.value = ''
-
-            data.push({
-                "role": "user",
-                "content": userInputData
-            })
-            // 답변 목록도 같이 push하면 맥락을 이해하여 답변 가능함
-            // DAY 1, DAY 2, DAY 3와 같은 형식으로 답변해줘 라고 미리 입력하면 split('DAY')이런 식으로 Card를 만들 수 있다.
-
-            chatGptAPI()
-        })
-
-        function chatGptAPI(){
-            fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-                redirect: "follow",
-            })
-            .then(res => res.json())
-            .then(res => {
-                // console.log(res)
-                // console.log(res.choices[0].message.content)
-                document.querySelector('#contents').innerText = res.choices[0].message.content
-            })
-            // 아래 코드는 fetch 성공, 실패, 통신 중 여부와 상관없이 실행된다. 비동기.
-            console.log('hello world')
-        }
     </script>
 </body>
 </html>
