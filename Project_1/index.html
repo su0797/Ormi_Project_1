@@ -187,6 +187,16 @@
             });
             console.log('apipost');
         };
+
+        // submit
+        $form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        $input.value = null;
+        sendQuestion(question);
+        apiPost();
+        printQuestion();
+        });
+    
     </script>
 </body>
 </html>
