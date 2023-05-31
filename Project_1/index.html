@@ -1,16 +1,92 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8" />
-    <title>chat</title>
+    <title>음악 추천</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .search-container input[type=text] {
+            padding: 15px;
+            width: 400px;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+        }
+        .search-container button {
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .search-container button:hover {
+            background-color: #45a049;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            width: 300px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333333;
+            font-size: 24px;
+        }
+        .card p {
+            margin-top: 0;
+            margin-bottom: 0;
+            color: #666666;
+            font-size: 16px;
+        }
+        </style>
 </head>
 <body>
-    <div>
-        <form>
-            <input type="text">
+    <div class="container">
+        <form action="post">
+            <h1>음악 추천</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="원하는 조건을 문장으로 적어주세요." autofocus />
             <button type="submit">전송</button>
+        </div>
         </form>
-        <div id="contents"></div>
+        <ul></ul>
     </div>
     <script>
         let $input = document.querySelector('input')
