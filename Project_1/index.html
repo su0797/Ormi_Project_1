@@ -115,7 +115,21 @@
         console.log('input');
         });
 
-        
+        // 사용자의 질문을 객체를 만들어서 push
+        const sendQuestion = (question) => {
+        if (question) {
+            data.push({
+            role: "user",
+            content: question,
+            });
+            questionData.push({
+            role: "user",
+            content: question,
+            });
+        }
+        console.log('sendQuestion');
+        };
+
     </script>
 </body>
 </html>
