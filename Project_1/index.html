@@ -145,6 +145,29 @@
         console.log('printQuestion');
         };
 
+         // 화면에 답변 그려주는 함수
+        const printAnswer = (answer) => {
+            let recommendedMusic = [
+                {answer: 'answer'}
+            ];
+            let cardContainer = document.getElementById("cardContainer");
+
+            recommendedMusic.forEach(function(music) {
+            let card = document.createElement("div");
+            card.classList.add("card");
+            let answer = document.getElementById("p");
+            answer.textContent = music.answer;
+            card.appendChild(answer);
+
+            cardContainer.appendChild(card);
+            // let li = document.createElement("li");
+            // li.classList.add("answer");
+            // li.innerText = answer;
+            $chatList.appendChild(cardContainer);
+            })
+            console.log('printanswer');
+        };
+
     </script>
 </body>
 </html>
