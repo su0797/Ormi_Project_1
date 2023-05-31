@@ -130,6 +130,21 @@
         console.log('sendQuestion');
         };
 
+        // 화면에 질문 그려주는 함수
+        const printQuestion = async () => {
+        if (question) {
+            let li = document.createElement("li");
+            li.classList.add("question");
+            questionData.map((el) => {
+            li.innerText = el.content;
+            });
+            $chatList.appendChild(li);
+            questionData = [];
+            question = false;
+        }
+        console.log('printQuestion');
+        };
+
     </script>
 </body>
 </html>
