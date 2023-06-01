@@ -86,12 +86,21 @@
             <button type="submit">전송</button>
         </div>
         </form>
-        <ul></ul>
+        <div class="question-box" id="questionBox">
+            <!-- user의 질문이 나오는 공간 -->
+        </div>
+        <div class="card-container" id="cardContainer">
+            <!-- 추천 음악 카드들이 동적으로 추가될 공간 -->
+        </div>
+        <ul>
+            <li  class="card-container" id="cardContainer"></li>
+        </ul>
     </div>
     <script>
         const $form = document.querySelector("form");
         const $input = document.querySelector("input");
-        const $chatList = document.querySelector("card-container");
+        const $questionList = document.querySelector("#questionBox")
+        const $chatList = document.querySelector("#cardContainer");
 
         // openAI API
         let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
@@ -133,12 +142,12 @@
         // 화면에 질문 그려주는 함수
         const printQuestion = async () => {
         if (question) {
-            let li = document.createElement("li");
-            li.classList.add("question");
+            let cardBox = document.createElement("div");
+            cardBox.classList.add("question");
             questionData.map((el) => {
-            li.innerText = el.content;
+            cardBox.innerText = el.content;
             });
-            $chatList.appendChild(li);
+            $chatList.appendChild(cardBox);
             questionData = [];
             question = false;
         }
@@ -147,26 +156,12 @@
 
          // 화면에 답변 그려주는 함수
         const printAnswer = (answer) => {
-            let recommendedMusic = [
-                {answer: 'answer'}
-            ];
-            let cardContainer = document.getElementById("cardContainer");
-
-            recommendedMusic.forEach(function(music) {
-            let card = document.createElement("div");
-            card.classList.add("card");
-            let answer = document.getElementById("p");
-            answer.textContent = music.answer;
-            card.appendChild(answer);
-
-            cardContainer.appendChild(card);
-            // let li = document.createElement("li");
-            // li.classList.add("answer");
-            // li.innerText = answer;
-            $chatList.appendChild(cardContainer);
-            })
-            console.log('printanswer');
+        let cardAnswer = document.createElement("div");
+        cardAnswer.classList.add("answer");
+        cardAnswer.innerText = answer;
+        $chatList.appendChild(cardAnswer);
         };
+
 
         // api 요청보내는 함수
         const apiPost = async () => {
@@ -200,3 +195,6 @@
     </script>
 </body>
 </html>
+
+
+
