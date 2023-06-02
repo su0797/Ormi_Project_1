@@ -26,7 +26,7 @@
         }
         .search-container input[type=text] {
             padding: 15px;
-            width: 400px;
+            width: 600px;
             border: none;
             border-radius: 50px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -82,16 +82,50 @@
             color: #666666;
             font-size: 16px;
         }
+        .select-box div {
+            display: inline-block;
+        }
         </style>
 </head>
 <body>
     <div class="container">
-        <form action="post">
-            <h1>음악 추천</h1>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="원하는 조건을 문장으로 적어주세요." autofocus />
-            <button type="submit">전송</button>
+        <h1>음악 추천</h1>
+        <div class="select-area">
+            <div class="select-box">
+                <div>시대</div>
+                <button type="button" id="era-btn">1980</button>
+                <button type="button" id="era-btn">1990</button>
+                <button type="button" id="era-btn">2000</button>
+                <button type="button" id="era-btn">2010</button>
+                <button type="button" id="era-btn">2020</button>
+            </div>
+            <div class="select-box">
+                <div>장르</div>
+                <button type="button" id="genre">발라드</button>
+                <button type="button" id="genre">댄스</button>
+                <button type="button" id="genre">랩 / 힙합</button>
+                <button type="button" id="genre">R&B / Soul</button>
+                <button type="button" id="genre">인디음악</button>
+                <button type="button" id="genre">록 / 매탈</button>
+                <button type="button" id="genre">트로트</button>
+                <button type="button" id="genre">포크 / 블루스</button>
+                <button type="button" id="genre">기타</button>
+                
+            </div>
+            <div class="select-box">
+                <div>언어</div>
+                <button type="button" id="language">한국어</button>
+                <button type="button" id="language">영어</button>
+                <button type="button" id="language">일본어</button>
+                <button type="button" id="language">중국어</button>
+                <button type="button" id="language">기타</button>
+            </div>
         </div>
+        <form action="post">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="원하는 조건을 선택해주세요." autofocus />
+                <button type="submit">검색</button>
+            </div>
         </form>
         <div class="question-box" id="questionBox">
             <!-- user의 질문이 나오는 공간 -->

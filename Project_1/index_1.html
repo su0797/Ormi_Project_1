@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>음악 추천</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .search-container input[type=text] {
+            padding: 15px;
+            width: 400px;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+        }
+        .search-container button {
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .search-container button:hover {
+            background-color: #45a049;
+        }
+        .question-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .cardAnswer {
+            width: 300px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .cardAnswer:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .cardAnswer h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333333;
+            font-size: 24px;
+        }
+        .cardAnswer p {
+            margin-top: 0;
+            margin-bottom: 0;
+            color: #666666;
+            font-size: 16px;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <form action="post">
+            <h1>음악 추천</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="원하는 조건을 문장으로 적어주세요." autofocus />
+            <button type="submit">전송</button>
+        </div>
+        </form>
+        <div class="question-box" id="questionBox">
+            <!-- user의 질문이 나오는 공간 -->
+        </div>
+        <!-- <div class="explan-container" id="explanContainer">
+            답변 전 설명 문장이 나오는 공간 
+        </div> -->
+        <div class="card-container" id="cardContainer">
+            <!-- 추천 음악 카드들이 동적으로 추가될 공간 -->
+        </div>
+        <!-- <ul>
+            <li  class="card-container" id="cardContainer"></li>
+        </ul> -->
+    </div>
+    <script>
+        const $form = document.querySelector("form");
+        const $input = document.querySelector("input");
+        // const $button = document.querySelector("button");
+        const $questionList = document.querySelector("#questionBox");
+        // const $explanationList = document.querySelector("#explanContainer");
+        const $chatList = document.querySelector("#cardContainer");
+
+        // openAI API
+        let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
+
+        // 사용자의 질문
+        let question;
+
+        // 질문과 답변 저장
+        let data = [{
+            "role": "system",
+            "content": "assistant는 친절한 답변가이다.",
+        },
+        {
+            "role": "user",
+            "content": "제일 먼저 '다음 질문에 대한 답변입니다' 라는 문장을 먼저 출력 후 답변을 줘."
+        }, 
+        {
+            "role": "user",
+            "content": "한번에 대답하지 말고 나눠서 답변해줘"
+        }
+    ];
+
+    
+        // 화면에 뿌려줄 데이터, 질문들
+        let questionData = [];
+
+        // input에 입력된 질문 받아오는 함수
+        $input.addEventListener("input", (e) => {
+        question = e.target.value;
+        console.log('input');
+        console.log(question);
+
+        });
+
+        // 사용자의 질문을 객체를 만들어서 push
+        const sendQuestion = (question) => {
+        if (question) {
+            data.push({
+            role: "user",
+            content: question,
+            });
+            questionData.push({
+            role: "user",
+            content: question,
+            });
+        }
+        console.log('sendQuestion');
+        };
+
+        // 화면에 질문 그려주는 함수
+        const printQuestion = async () => {
+        if (question) {
+            let cardBox = document.createElement("div");
+            cardBox.classList.add("question");
+            questionData.map((el) => {
+            cardBox.innerText = el.content;
+            });
+            $questionList.appendChild(cardBox);
+            questionData = [];
+            question = false;
+        }
+        console.log('printQuestion');
+        };
+
+        //  // 화면에 답변 전 설명을 그려주는 함수
+        // const printExplanation = (explanation) => {
+        // let cardExplan = document.createElement("div");
+        // cardExplan.classList.add("explanation");
+        // cardExplan.innerText = explanation;
+        // $explanationList.appendChild(cardExplan);
+        // console.log(cardExplan);
+        // };
+
+        // 화면에 답변 그려주는 함수
+        
+        // 화면에 답변 그려주는 함수
+        const printAnswer = (answer) => {
+        let cardAnswer = document.createElement("div");
+        cardAnswer.classList.add("answer");
+        cardAnswer.innerText = answer;
+        $chatList.appendChild(cardAnswer);
+        };
+
+        // const showAnswer = (cardAnswer) => {
+        // let code = cardAnswer.innerText;
+        // let lines = code.split("<br>").filter(line => line.trim() !== "");
+        
+        // lines.forEach(line => {
+        //     let lineElement = document.createElement("div");
+        //     lineElement.innerText = line;
+        //     $chatList.appendChild(lineElement);
+        // });
+        
+        // console.log(lines);
+        // };
+
+        // const realAnswer  = (answer) => {
+        //     let cardAnswer = printAnswer(answer);
+        //     showAnswer(cardAnswer);
+        // };
+
+        // api 요청보내는 함수
+        const apiPost = async () => {
+        const result = await fetch(url, {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+            redirect: "follow",
+            })
+            .then((res) => res.json())
+            .then((res) => {
+            printAnswer(res.choices[0].message.content);
+            })
+            .catch((err) => {
+            console.log(err);
+            });
+            console.log('apipost');
+        };
+        // fetch(url,{
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify(data),
+        //     redirect: "follow",
+        // })
+        // .then(res => res.json())
+        // .then(res => {
+        // console.log(JSON.parse(res.choices[0].message.content))
+        // })
+
+
+        // submit
+        $form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        $input.value = null;
+        sendQuestion(question);
+        apiPost();
+        printQuestion();
+        });
+
+    </script>
+</body>
+</html>
+
+
+
