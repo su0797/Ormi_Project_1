@@ -82,51 +82,78 @@
             color: #666666;
             font-size: 16px;
         }
-        .select-box div {
+        /* .select-box div {
             display: inline-block;
+        } */
+        .select-box ul {
+            margin: 0;
+            padding: 0;
+            margin: 5px 0 0 12px;
+            padding: 5px 0 5px 16px;
+            border-left: 1px solid rgba(30,30,30,0.1);
+        }
+        .select-box li {
+            background: white;
+            box-shadow: 3px 3px 5px 2px rgb(0 0 0 / 1%);
+            border-radius: 10px;
+            padding: 6px 12px 6px 10px;
+            display: inline-block;
+            border: 0.5px solid #6260cd;
+            margin: 0 7px 10px 0;
+            font-size: 13.5px;
+            cursor: pointer;
+        }
+        .select-box p {
+            margin-top: 0;
+            margin-bottom: 1rem;
         }
         </style>
 </head>
 <body>
     <div class="container">
         <h1>음악 추천</h1>
-        <div class="select-area">
-            <div class="select-box">
-                <div>시대</div>
-                <button type="button" id="era-btn">1980</button>
-                <button type="button" id="era-btn">1990</button>
-                <button type="button" id="era-btn">2000</button>
-                <button type="button" id="era-btn">2010</button>
-                <button type="button" id="era-btn">2020</button>
-            </div>
-            <div class="select-box">
-                <div>장르</div>
-                <button type="button" id="genre">발라드</button>
-                <button type="button" id="genre">댄스</button>
-                <button type="button" id="genre">랩 / 힙합</button>
-                <button type="button" id="genre">R&B / Soul</button>
-                <button type="button" id="genre">인디음악</button>
-                <button type="button" id="genre">록 / 매탈</button>
-                <button type="button" id="genre">트로트</button>
-                <button type="button" id="genre">포크 / 블루스</button>
-                <button type="button" id="genre">기타</button>
-                
-            </div>
-            <div class="select-box">
-                <div>언어</div>
-                <button type="button" id="language">한국어</button>
-                <button type="button" id="language">영어</button>
-                <button type="button" id="language">일본어</button>
-                <button type="button" id="language">중국어</button>
-                <button type="button" id="language">기타</button>
-            </div>
-        </div>
         <form action="post">
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="원하는 조건을 선택해주세요." autofocus />
                 <button type="submit">검색</button>
             </div>
         </form>
+        <div class="select-area">
+            <div class="select-box">
+                <p>시대</p>
+                <ul>
+                    <li id="select_btn">1980</li>
+                    <li id="select_btn">1990</li>
+                    <li id="select_btn">2000</li>
+                    <li id="select_btn">2010</li>
+                    <li id="select_btn">2020</li>
+                </ul>
+            </div>
+            <div class="select-box">
+                <p>장르</p>
+                <ul>
+                    <li id="select_btn">발라드</li>
+                    <li id="select_btn">댄스</li>
+                    <li id="select_btn">랩 / 힙합</li>
+                    <li id="select_btn">R&B / Soul</li>
+                    <li id="select_btn">인디음악</li>
+                    <li id="select_btn">록 / 매탈</li>
+                    <li id="select_btn">트로트</li>
+                    <li id="select_btn">포크 / 블루스</li>
+                    <li id="select_btn">기타</li>
+                </ul>
+            </div>
+            <div class="select-box">
+                <p>언어</p>
+                <ul>
+                    <li id="select_btn">한국어</li>
+                    <li id="select_btn">영어</li>
+                    <li id="select_btn">일본어</li>
+                    <li id="select_btn">중국어</li>
+                    <li id="select_btn">기타</li>
+                </ul>
+            </div>
+        </div>
         <div class="question-box" id="questionBox">
             <!-- user의 질문이 나오는 공간 -->
         </div>
