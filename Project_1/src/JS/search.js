@@ -72,23 +72,6 @@ if (question) {
 console.log('printQuestion')
 };
 
-
-// document.querySelectorAll('button[type="button"]').forEach(selectButton=> {
-//     selectButton.addEventListener("change", (e) => {
-//         const target = e.target;
-//         const id = target.id;
-//         const checked = target.checked;
-
-//         if (id === '여자' || id === '남자') {
-//         gender = checked ? id : '';
-//         } else if (id.includes('대')) {
-//         age = checked ? id : '';
-//         } else if (id === '실내' || id === '실외') {
-//         place = checked ? id : '';
-//         }
-//     });
-// });
-
 // 화면에 답변 그려주는 함수
 const printAnswer = (answer) => {
 let cardAnswer = document.createElement("div");
