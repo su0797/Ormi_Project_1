@@ -1,4 +1,4 @@
-const $button = document.querySelector("#select_btn");
+const $button = document.getElementById("select_btn");
 const $search = document.querySelector("searchInput");
 
 // 사용자가 선택한 조건을 입력하는 함수
@@ -11,7 +11,7 @@ const selectValue = (selectli) => {
     let selectButton = document.createElement("li");
     // selectButton.classList.add("selectli");
     selectButton.innerText = selectli;
-    $search.appendChild(selectli);
+    $button.append(selectli);
     console.log(selectli);
 };
 
