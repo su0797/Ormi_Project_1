@@ -84,6 +84,12 @@ h1 {
 .select-area{
     margin-top: 140px;
 }
+fieldset {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+}
 .select-box {
     margin-top: 15px;
     margin-bottom: 50px;
