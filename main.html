@@ -3,10 +3,19 @@
 <head>
     <title>음악 추천</title>
     <link rel="stylesheet" href="/src/CSS/main.css">
-</head>
 <body>
     <header>
-
+        <nav class="navbar">
+            <div class="nav_logo">
+                <a href="index.html"><img src="Img/LOGOimg.png" alt="LOGOimg">
+                </a>
+            </div>
+            <ul class="nav_menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="https://www.youtube.com">Youtube</a></li>
+                <li><a href="https://www.google.com">Google</a></li>
+            </ul>
+        </nav>
     </header>
     <div class="container">
         <h2>음악 추천</h2>
@@ -53,7 +62,6 @@
         <form action="post">
             <div class="search-container">
                 <button type="submit">검색</button>
-                <button onclick="location.href='index.html'">돌아가기</button>
             </div>
         </form>
         <div class="card-container" id="cardContainer">
