@@ -81,14 +81,6 @@ h2 {
     margin-bottom: 30px;
     margin-top: 95px;
 }
-.search-container input[type=text] {
-    padding: 15px;
-    width: 600px;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    font-size: 18px;
-}
 .search-container button {
     padding: 25px 85px;
     background-color: #6260cd;
@@ -103,51 +95,13 @@ h2 {
 .search-container button:hover {
     background-color: #4d4bcb;
 }
-.question-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.cardAnswer {
-    width: 300px;
-    margin: 10px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    cursor: pointer;
-}
-.cardAnswer:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.cardAnswer h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #333333;
-    font-size: 24px;
-}
-.cardAnswer p {
-    margin-top: 0;
-    margin-bottom: 0;
-    color: #666666;
-    font-size: 16px;
-}
 .select-area{
     margin-top: 140px;
-}
-fieldset {
-    display: block;
-    margin: 0px;
-    padding: 0px;
-    border-width: 0px;
 }
 .select-box {
     margin-top: 15px;
@@ -159,32 +113,13 @@ fieldset {
     margin: 0 0 0 50px;
     padding: 5px 0 5px 16px;
     border-left: 1px solid rgba(30,30,30,0.1);
-}
-.select-box input {
-    background: white;
-    box-shadow: 3px 3px 5px 2px rgb(0 0 0 / 1%);
-    border-radius: 10px;
-    padding: 6px 12px 6px 10px;
-    display: inline-block;
-    border: 0.5px solid #6260cd;
-    margin: 0 7px 10px 0;
-    font-size: 13.5px;
-    cursor: pointer;
-}
-.select_btn_two {
-    background: rgb(111, 111, 111);
-    box-shadow: 3px 3px 5px 2px rgb(0 0 0 / 1%);
-    border-radius: 10px;
-    padding: 6px 12px 6px 10px;
-    display: inline-block;
-    border: 0.5px solid #6260cd;
-    margin: 0 7px 10px 0;
-    font-size: 13.5px;
-    cursor: pointer;
+    font-weight: 600;
 }
 .select-box p {
     margin-top: 0;
     margin-bottom: 1rem;
+    font-size: 20px;
+    font-weight: 700;
 }
 .card-container{
     margin-top: 80px;

@@ -5,7 +5,7 @@ body {
     padding: 0;
 }
 .container {
-    max-width: max-content;
+    text-align: center;
     margin: 0 auto;
     padding: 20px;
 }
@@ -29,4 +29,8 @@ h2 {
 }
 .container button:hover {
     background-color: #4d4bcb;
+}
+.container img {
+    width: 800px;
+    height: auto;
 }
