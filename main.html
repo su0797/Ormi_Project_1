@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <title>음악 추천</title>
-    <link rel="stylesheet" href="/src/CSS/main.css">
+    <link rel="stylesheet" href="/src/CSS/index.css">
 <body>
     <header>
         <nav class="navbar">
@@ -17,7 +17,7 @@
             </ul>
         </nav>
     </header>
-    <div class="container">
+    <div class="main-container">
         <h2>원하는 조건을 선택해주세요.</h2>
         <div class="select-area">
             <div class="select-box">
@@ -61,21 +61,17 @@
         </div>
         <form action="post">
             <div class="search-container">
-                <button type="submit">검색</button>
+                <button type="submit">SEARCH</button>
             </div>
         </form>
-        <div class="card-container" id="cardContainer">
-            <!-- 추천 음악들이 추가될 공간 -->
-        </div>
+        <!-- <div class="card-container" id="cardContainer">
+            추천 음악들이 추가될 공간
+        </div> -->
     </div>
-    <footer>
-
+    <footer class="footer">
+        <div></div>
     </footer>
     <script src="/src/JS/search.js"></script>
     <script src="/src/JS/select.js"></script>
 </body>
 </html>
-
-
-
-

@@ -3,18 +3,79 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
-.container {
+header {
+    background-color: #e7e7ff;
+    border-bottom: solid 3px #c8c7ff ;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 8px 12px;
+}
+/* .nav_logo {
+    color: var(--text-color);
+}
+.nav_logo a {
+    color: var(--accent-color);
+} */
+.nav_logo img {
+    height: 50px;
+    width: 50px;
+}
+.nav_menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+.nav_menu li {
+    padding: 0px 20px;
+}
+.nav_menu li:hover {
+    /* color: var(--background-color);
+    background-color: var(--accent-color); */
+    border-radius: 4px;
+}
+/* .nav_menu li a:hover {
+    color: var(--background-color);
+} */
+.nav_menu a {
+    text-decoration: none;
+    color: #4d4bcb;
+    font-size: 20px;
+    font-weight: 800;
+}
+/* .nav_icons {
+    display: flex;
+    color: #7dc0ff;
+    list-style: none;
+    padding-left: 0;
+}
+.nav_icons li {
+    padding: 8px 5px;
+}
+.navbar_toggleBtn {
+    display: none;
+    color:var(--text-color);
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+} */
+.index-container {
     text-align: center;
     margin: 0 auto;
 }
-.container h2 {
+.index-container h2 {
     text-align: center;
     color: #333333;
     font-size: 36px;
-    margin-bottom: 40px;
+    margin: 70px 0px 50px 0px;
+    /* margin-bottom: 40px; */
 }
-.container button {
+.index-container button {
     padding: 25px 85px;
     background-color: #6260cd;
     color: white;
@@ -25,11 +86,80 @@ body {
     transition: background-color 0.3s ease;
     font-weight: 700;
 }
-.container button:hover {
+.index-container button:hover {
     background-color: #4d4bcb;
 }
-.container img {
+.index-container img {
     width: 100%;
-    height: 650px;
+    height: 550px;
     opacity: 0.95;
+    border-bottom: solid 3px #c8c7ff ;
+}
+.main-container {
+    max-width: max-content;
+    margin: 0 auto;
+    padding: 20px;
+}
+.main-container h2 {
+    text-align: center;
+    color: #333333;
+    font-size: 36px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.search-container {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 95px;
+}
+.search-container button {
+    padding: 25px 85px;
+    background-color: #6260cd;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 25px;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+}
+.search-container button:hover {
+    background-color: #4d4bcb;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.select-area{
+    margin-top: 160px;
+}
+.select-box {
+    margin-top: 15px;
+    margin-bottom: 50px;
+}
+.select-box label {
+    margin: 0;
+    padding: 0;
+    margin: 0 0 0 50px;
+    padding: 5px 0 5px 16px;
+    border-left: 1px solid rgba(30,30,30,0.1);
+    font-weight: 600;
+}
+.select-box p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 20px;
+    font-weight: 700;
+}
+.card-container{
+    margin-top: 80px;
+    border: 4.5px solid #6260cd;
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px;
+}
+.footer {
+    background-color: #c8c7ff;
+
 }
