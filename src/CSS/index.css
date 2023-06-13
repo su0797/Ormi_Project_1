@@ -7,14 +7,12 @@ body {
 .container {
     text-align: center;
     margin: 0 auto;
-    padding: 20px;
 }
-h2 {
+.container h2 {
     text-align: center;
     color: #333333;
     font-size: 36px;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    margin-bottom: 40px;
 }
 .container button {
     padding: 25px 85px;
@@ -31,6 +29,7 @@ h2 {
     background-color: #4d4bcb;
 }
 .container img {
-    width: 800px;
-    height: auto;
+    width: 100%;
+    height: 650px;
+    opacity: 0.95;
 }

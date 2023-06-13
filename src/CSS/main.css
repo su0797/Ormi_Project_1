@@ -1,12 +1,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
+    background-color: rgb(253, 252, 255);
     margin: 0;
     padding: 0;
 }
 header {
-    background-color: #d2d1f5;
     border-bottom: solid 3px #bab9ff ;
 }
 .navbar {
