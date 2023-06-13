@@ -27,7 +27,7 @@
                 <label for="2000년대"><input type="radio" name="yearSection" id="2000년대" value="2000년대">2000년대</label>
                 <label for="2010년대"><input type="radio" name="yearSection" id="2010년대" value="2010년대">2010년대</label>
                 <label for="2020년대"><input type="radio" name="yearSection" id="2020년대" value="2020년대">2020년대</label>
-                <label for="기타"><input type="radio" name="yearSection"  id="기타" value="기타">기타</label>
+                <label for="기타"><input type="radio" name="yearSection"  id="모든연도" value="기타">기타</label>
             </div>
             <div class="select-box">
                 <p>장르</p>
@@ -39,7 +39,7 @@
                 <label for="록_메탈"><input type="radio" name="genreSection" id="록,메탈" value="록,메탈" >록 / 메탈</label>
                 <label for="트로트"><input type="radio" name="genreSection" id="트로트" value="트로트" >트로트</label>
                 <label for="포크_블루스"><input type="radio" name="genreSection" id="포크,블루스" value="포크,블루스" >포크 / 블루스</label>
-                <label for="기타"><input type="radio" name="genreSection" id="기타" value="기타" >기타</label>
+                <label for="기타"><input type="radio" name="genreSection" id="모든장르" value="기타" >기타</label>
             </div>
             <div class="select-box">
                 <p>날씨</p>
@@ -48,7 +48,7 @@
                 <label for="안개가가득한날"><input type="radio" name="weatherSection" id="안개가가득한날" value="안개가가득한날">안개가 가득한 날</label>
                 <label for="눈이내리는날"><input type="radio" name="weatherSection" id="눈이내리는날" value="눈이내리는날">눈이 내리는 날</label>
                 <label for="바람이부는날"><input type="radio" name="weatherSection" id="바람이부는날" value="바람이부는날">바람이 부는 날</label>
-                <label for="기타"><input type="radio" name="weatherSection" id="기타" value="기타">기타</label>
+                <label for="기타"><input type="radio" name="weatherSection" id="모든날씨" value="기타">기타</label>
             </div>
             <div class="select-box">
                 <p>시간대</p>
@@ -56,20 +56,29 @@
                 <label for="점심"><input type="radio" name="timeSection" id="점심" value="점심">점심</label>
                 <label for="저녁"><input type="radio" name="timeSection" id="저녁" value="저녁">저녁</label>
                 <label for="새벽"><input type="radio" name="timeSection" id="새벽" value="새벽">새벽</label>
-                <label for="기타"><input type="radio" name="timeSection" id="기타" value="기타">기타</label>
+                <label for="기타"><input type="radio" name="timeSection" id="모든시간대" value="기타">기타</label>
             </div>
         </div>
         <form action="post">
             <div class="search-container">
-                <button type="submit">SEARCH</button>
+                <button type="submit">검색</button>
+                <button onClick="window.location.reload()">다시하기</button></div>
             </div>
         </form>
-        <!-- <div class="card-container" id="cardContainer">
-            추천 음악들이 추가될 공간
-        </div> -->
+            <!-- <div class="card-container" id="cardContainer">
+                추천 음악들이 추가될 공간
+            </div> -->
     </div>
-    <footer class="footer">
-        <div></div>
+    <footer>
+        <div class="footer">
+            <nav>
+                <a href='https://www.instagram.com' target='_blank'>Instagram |</a> 
+                <a href='https://github.com/su0797/Ormi_Project_1' target='_blank'>Github</a>
+            </nav>
+            <p>
+                <span>Copyright 2023. All Rights Reserved.</span>
+            </p>
+        </div>
     </footer>
     <script src="/src/JS/search.js"></script>
     <script src="/src/JS/select.js"></script>

@@ -21,7 +21,7 @@ let data = [
     content: "assistant는 친절한 음악 추천 AI이다.",
 },{
     role: "system",
-    content: "답변 처음에는 무조건 '다음 질문에 대한 답변입니다' 라는 문장만 먼저 출력 후 답변읋 한다. 다른 문장은 보여주지 않는다."
+    content: "답변은 무조건 1.가수 - 제목 형태로만 대답하고 부가적인 모든말은 하지 않는다."
 }, {
     role: "system",
     content: "한번에 대답하지 말고 나눠서 답변한다."
@@ -31,10 +31,12 @@ let data = [
 },{
     role: "system",
     content: "1980년대는 1980년부터 1989년까지이다. 1990년대는 1990년부터 1999년까지이다. 2000년대는 2000년부터 2009년까지이다.2010년대는 2010년부터 2019년까지이다. 2020년대는 2020년부터 2023년까지이다."
-},{
-    role: "system",
-    content: "답변 마지막에 한줄을 띄우고 무조건 '다음과 같은 곡들을 추천합니다.' 라는 문장을 같이 보여준다."
-},{
+}
+// ,{
+//     role: "system",
+//     content: "답변 마지막에 한줄을 띄우고 무조건 '다음과 같은 곡들을 추천합니다.' 라는 문장을 같이 보여준다."
+// },
+,{
     role: "system",
     content: "모든 곡의 제목은 한국어로 알려준다."
 },{
@@ -78,7 +80,7 @@ console.log('printQuestion')
 
 // 화면에 답변 그려주는 함수
 const printAnswer = (answer) => {
-let cardAnswer = document.querySelector("#cardContainer");
+let cardAnswer = document.createElement("div");
 cardAnswer.classList.add("answer");
 cardAnswer.innerText = answer;
 $chatList.appendChild(cardAnswer);
@@ -110,5 +112,5 @@ $form.addEventListener("submit", (e) => {
 e.preventDefault();
 sendQuestion(question);
 apiPost();
-printQuestion();
+// printQuestion();
 });
