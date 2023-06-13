@@ -21,7 +21,7 @@ let data = [
     content: "assistant는 친절한 음악 추천 AI이다.",
 },{
     role: "system",
-    content: "답변은 무조건 1.가수 - 제목 형태로만 대답하고 부가적인 모든말은 하지 않는다."
+    content: "답변은 무조건 1. 가수 - 제목 형태로만 대답하고 부가적인 모든말은 하지 않는다."
 }, {
     role: "system",
     content: "한번에 대답하지 말고 나눠서 답변한다."
