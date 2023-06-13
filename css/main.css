@@ -13,7 +13,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--background-color);
     padding: 8px 12px;
 }
 .nav_logo img {
