@@ -55,7 +55,6 @@ const sendQuestion = (question) => {
             content: question,
         });
     }
-    console.log("sendQuestion");
 };
 
 // 화면에 질문 그려주는 함수
@@ -70,7 +69,6 @@ if (question) {
     questionData = [];
     question = false;
 }
-console.log('printQuestion')
 };
 
 // 화면에 답변 그려주는 함수
@@ -79,7 +77,6 @@ let cardAnswer = document.querySelector("#cardContainer");
 cardAnswer.classList.add("answer");
 cardAnswer.innerText = answer;
 $chatList.appendChild(cardAnswer);
-console.log('printAnswer')
 };
 
 // api 요청보내는 함수
@@ -99,7 +96,6 @@ const apiPost = async () => {
         .catch((err) => {
         console.log(err);
         });
-    console.log('apiPost')
 };
 
 // submit
@@ -107,5 +103,4 @@ $form.addEventListener("submit", (e) => {
 e.preventDefault();
 sendQuestion(question);
 apiPost();
-// printQuestion();
 });
