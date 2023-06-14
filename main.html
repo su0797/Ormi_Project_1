@@ -4,7 +4,6 @@
     <title>Today Music</title>
     <link rel="stylesheet" href="./css/index.css">
 <body>
-    <!-- Header -->
     <header>
         <nav class="navbar">
             <div class="nav_logo">
@@ -63,19 +62,21 @@
             </div>
         </div>
         <!-- //Select Area -->
-        <!-- Result Container -->
+        <!-- Search Container -->
         <form action="post">
             <div class="search-container">
                 <button type="submit">검색</button>
-                <button onClick="window.location.reload()">다시하기</button></div>
+                <button onClick="window.location.reload()">다시하기</button>
             </div>
         </form>
-            <div class="result-box">
-                <div class="card-container" id="cardContainer">
-                </div>
-            </div>
+        <!-- //Search Container -->
+        <!-- Result Box -->
+        <div class="result-box">
+            <div class="card-container" id="cardContainer"></div>
+        </div>
+        <!-- //Result Box -->
     </div>
-    <!-- Footer -->
+    <!-- //Main -->
     <footer>
         <div class="footer">
             <nav>
@@ -87,7 +88,6 @@
             </p>
         </div>
     </footer>
-    <!-- Script -->
     <script src="./js/search.js"></script>
     <script src="./js/select.js"></script>
 </body>
