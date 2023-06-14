@@ -7,12 +7,6 @@ let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 
 // 사용자의 질문
 let question = '';
-let year = '';
-let genre = '';
-let weather = '';
-let time = '';
-
-
 
 // 질문과 답변 저장
 let data = [
@@ -34,14 +28,11 @@ let data = [
 },{
     role: "system",
     content: "모든 곡의 제목은 한국어로 알려준다."
-},{
-    role: "system",
-    content: "모든 곡은 '가수 - 노래 제목' 형식으로 답한다."
 }
 ];
 
 // 화면에 뿌려줄 데이터, 질문들
-let questionData = [];
+const questionData = [];
 
 // 사용자의 질문을 객체를 만들어서 push
 const sendQuestion = (question) => {

@@ -1,3 +1,9 @@
+// 사용자가 선택하는 조건
+let year = '';
+let genre = '';
+let weather = '';
+let time = '';
+
 // 선택한 값을 질문으로 넣기
 document.querySelectorAll('input[type="radio"]').forEach((radio) => {
     radio.addEventListener("change", (e) => {
