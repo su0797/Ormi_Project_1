@@ -9,7 +9,6 @@
 
 ### 1.2 기능
 - 사용자가 원하는 조건의 음악 추천 
-- 
 
 ## 2. 배포 URL
 - https://su0797.github.io/Ormi_Project_1/
