@@ -12,3 +12,19 @@
 
 ## 2. 배포 URL
 - https://su0797.github.io/Ormi_Project_1/
+
+
+
+.
+├── README.md
+├── css
+│   ├── index.css
+│   └── main.css
+├── img
+│   ├── BGimg.jpg
+│   └── LOGOimg.png
+├── index.html
+├── js
+│   ├── search.js
+│   └── select.js
+└── main.html
