@@ -27,7 +27,6 @@ document.querySelectorAll('input[type="radio"]').forEach((radio) => {
             }
             const selectValue = [year, genre, weather, time];
             question = selectValue.join();
-            console.log(question);
     })
 })
 
