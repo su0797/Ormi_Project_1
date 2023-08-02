@@ -82,7 +82,6 @@ const printQuestion = async () => {
     }
 };
 
-
 // 화면에 답변 그려주는 함수
 const printAnswer = (answer) => {
     if (answer && typeof answer === 'string') {
@@ -145,9 +144,22 @@ function getCookie(name) {
 
 $form.addEventListener("submit", async (e) => { // 비동기 함수로 변경
     e.preventDefault();
-    // printQuestion();
-    // sendQuestion(question);
-    console.log(question);
     await apiPost(); // await를 사용하여 결과를 기다림
     printAnswer();
     });
+
+
+const $resetButton = document.querySelector("#resetButton"); // 다시하기 버튼을 가져옴
+
+$resetButton.addEventListener("click", function() {
+    window.location.reload(); // 페이지 리로드
+});
+    
+
+// $form.addEventListener("submit", async (e) => {
+//     e.preventDefault();
+//     question = $input.value; // 사용자가 입력한 질문을 question 변수에 저장
+//     await apiPost();
+//     printQuestion(); // 사용자가 입력한 질문을 화면에 그려주도록 printQuestion() 함수 호출
+//     printAnswer();
+// });
