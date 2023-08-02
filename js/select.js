@@ -33,7 +33,7 @@ document.querySelectorAll('input[type="radio"]').forEach((radio) => {
         console.log(selectValue);
 
         // 배열의 요소를 문자열로 결합하여 question에 할당
-        question = selectValue.join(', ');
+        question = `${year} 년대에 나온 ${genre} 장르인 노래들 중에서 ${weather}에 어울리고 ${time}에 듣기 좋은 한국 노래 5곡을 가수 - 노래 제목 형식에 맞춰서 보내줘. 한번만 대답해줘`;
     })
 });
 
