@@ -9,24 +9,32 @@ const  genre_id = ['발라드', '댄스', '랩,힙합', 'R&B,Soul', '인디음�
 const  weather_id = ['화창한날', '비가내리는날', '안개가가득한날', '눈이내리는날', '바람이부는날', '모든날씨']
 const  time_id = ['아침', '점심', '저녁', '새벽', '모든시간대']
 
-// 선택한 값을 질문으로 넣기
+
+let selectValue = []; // 배열로 초기화
+
 document.querySelectorAll('input[type="radio"]').forEach((radio) => {
     radio.addEventListener("change", (e) => {
-            const target = e.target;
-            const id = target.id;
-            const value = target.value;
+        const target = e.target;
+        const id = target.id;
+        const value = target.value;
 
-            if (year_id.includes(id)) {
-                year = id;
-            } else if (genre_id.includes(id)) {
-                genre = id;
-            } else if (weather_id.includes(id)) {
-                weather = id;
-            } else if (time_id.includes(id)) {
-                time = id;
-            }
-            const selectValue = [year, genre, weather, time];
-            question = selectValue.join();
+        if (year_id.includes(id)) {
+            year = id;
+        } else if (genre_id.includes(id)) {
+            genre = id;
+        } else if (weather_id.includes(id)) {
+            weather = id;
+        } else if (time_id.includes(id)) {
+            time = id;
+        }
+        
+        // 선택한 값을 배열에 추가
+        selectValue = [year, genre, weather, time];
+        console.log(selectValue);
+
+        // 배열의 요소를 문자열로 결합하여 question에 할당
+        question = selectValue.join(', ');
     })
-})
+});
+
 

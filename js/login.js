@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // 로그인에 성공한 경우 처리
                 const response = xhr.response;
                 console.log("로그인 성공:", response);
+                console.log(data);
                 // 여기에 로그인 성공 시 처리할 코드를 작성합니다.
                 // 메인 페이지로 리다이렉트
                 window.location.href = "./main.html";

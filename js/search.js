@@ -153,6 +153,7 @@ $form.addEventListener("submit", async (e) => { // 비동기 함수로 변경
     e.preventDefault();
     // printQuestion();
     sendQuestion(question);
+    console.log(question);
     await apiPost(); // await를 사용하여 결과를 기다림
     printAnswer();
     });
